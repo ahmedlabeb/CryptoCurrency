@@ -12,3 +12,8 @@
   - apply command (maven clean install)
   - Start the server from the IDE , Server will be up and running on port 9090  , you can view the swagger through this URL   
               http://localhost:9090/swagger-ui/index.html#/  
+              
+  # What is Purpose of This service 
+  
+  This is service is mainly integrating with https://alternative.me/crypto/api/ that provide data on crypto currencies.
+  It also provide Registeration API and ticker API which will be secured and need username and password ( Basic Authentication ) 
