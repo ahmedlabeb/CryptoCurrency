@@ -16,4 +16,17 @@
   # What is Purpose of This service 
   
   This is service is mainly integrating with https://alternative.me/crypto/api/ that provide data on crypto currencies.
-  It also provide Registeration API and ticker API which will be secured and need username and password ( Basic Authentication ) 
+  It also provide Registeration API and ticker API which will be secured and need username and password ( Basic Authentication )
+  
+  # Technology used 
+  
+  - Spring Boot version 2.3.7.RELEASE
+  - Swageer Documentation 
+  - Spring Data JPA 
+  - Mysql Connector 
+  - Spring Data Redis 
+  - Lombok
+  - Spring boot test
+  - MapStruct 
+  - jacoco for test coverage
+  - spring cloud openfiegn for client integration 
