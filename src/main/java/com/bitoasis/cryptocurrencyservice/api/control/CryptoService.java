@@ -82,7 +82,7 @@ public class CryptoService {
         Optional<CryptoData> optionalCryptoData = coinData.getCryptoDataList()
                 .stream().filter(cryptoData -> cryptoData.getSymbol().equals(coinCode)).findFirst();
         if (optionalCryptoData.isEmpty())
-            CryptoServiceError.SERVICE_UN_AVAILABLE.buildExcpetion();
+            throw CryptoServiceError.SERVICE_UN_AVAILABLE.buildExcpetion();
 
         Long coinId= Long.parseLong(optionalCryptoData.get().getId());
         TickerData retrivedTickerData = cryptoClient.tickerInfo(coinId);
