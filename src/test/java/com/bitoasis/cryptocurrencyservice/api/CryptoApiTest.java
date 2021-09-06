@@ -1,4 +1,4 @@
-package com.bitoasis.cryptodemo.api;
+package com.bitoasis.cryptocurrencyservice.api;
 
 import com.bitoasis.cryptocurrencyservice.api.CryptoApi;
 import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.CryptoDataDTO;

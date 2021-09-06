@@ -1,9 +1,11 @@
-package com.bitoasis.cryptodemo.api.facade;
+package com.bitoasis.cryptocurrencyservice.api.facade;
 
 import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.CoinDTO;
+import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.CryptoDataDTO;
 import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.OrderByEnum;
 import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.UserDTO;
 import com.bitoasis.cryptocurrencyservice.api.control.CryptoService;
+import com.bitoasis.cryptocurrencyservice.api.control.integration.bo.TickerData;
 import com.bitoasis.cryptocurrencyservice.api.entity.User;
 import com.bitoasis.cryptocurrencyservice.api.entity.repository.CryptoDataRedisRepository;
 import com.bitoasis.cryptocurrencyservice.api.entity.repository.UserRepository;
@@ -20,6 +22,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,14 +58,23 @@ public class CryptoServiceTest {
         assertEquals(coinData.getId(),initCryptoData.getId());
     }
 
-/*    @Test
+    @Test
     void retrieveCodeData_ServiceUnAvaliable() {
         CoinData coinData = buildCoinData();
         lenient().when(cryptoDataRedisRepository.findTopByOrderByIdDesc()).thenReturn(Optional.of(coinData));
         assertThrows(CryptoServiceException.class,
-                () ->   cryptoFacade.retrieveCoinDate("c2"));  ;
-    }*/
+                () ->   cryptoService.retrieveCoinDate("C2"));  ;
+    }
+    @Test
+    void retrieveCodeDataAvaliablee() {
+        CoinData coinData = buildCoinData();
+        lenient().when(cryptoDataRedisRepository.findTopByOrderByIdDesc()).thenReturn(Optional.of(coinData));
+        lenient().when(cryptoDataMapper.toDTO(any())).thenReturn(new CryptoDataDTO());
+        lenient().when(cryptoClient.tickerInfo(any())).thenReturn(buildTickerData());
 
+        CryptoDataDTO c2 = cryptoService.retrieveCoinDate("C1");
+        assertNotNull(c2);
+    }
     @Test
     void retrieveAllCoinsSuccess() {
         CoinData coinData = buildCoinData();
@@ -135,6 +147,7 @@ public class CryptoServiceTest {
         CryptoData cryptoData = new CryptoData();
         cryptoData.setId("1");
         cryptoData.setName("c1");
+        cryptoData.setSymbol("C1");
         return cryptoData;
     }
 
@@ -143,5 +156,14 @@ public class CryptoServiceTest {
         metaData.setTimestamp("2345678");
         metaData.setNumCryptocurrencies("2");
         return metaData;
+    }
+
+    private TickerData buildTickerData(){
+        TickerData tickerData=new TickerData();
+        tickerData.setMetaData(buildMetadata());
+        HashMap<Long, CryptoData> cryptoDataHashMap = new HashMap<>();
+        cryptoDataHashMap.put(1L,buildCryptoData());
+        tickerData.setCryptoDataMap(cryptoDataHashMap);
+        return tickerData;
     }
 }

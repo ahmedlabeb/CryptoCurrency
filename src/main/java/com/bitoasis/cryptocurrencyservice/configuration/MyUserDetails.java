@@ -1,4 +1,4 @@
-package com.bitoasis.cryptocurrencyservice.api.control.configuration;
+package com.bitoasis.cryptocurrencyservice.configuration;
 
 import com.bitoasis.cryptocurrencyservice.api.entity.User;
 import org.springframework.security.core.GrantedAuthority;

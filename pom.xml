@@ -186,7 +186,7 @@
                         <exclude>com/bitoasis/cryptocurrencyservice/control/event/**</exclude>
                         <exclude>com/bitoasis/cryptocurrencyservice/control/execption/**</exclude>
                         <exclude>com/bitoasis/cryptocurrencyservice/control/integration/**</exclude>
-                        <exclude>com/bitoasis/cryptocurrencyservice/control/entity/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/entity/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

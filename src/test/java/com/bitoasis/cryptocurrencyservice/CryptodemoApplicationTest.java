@@ -1,7 +1,7 @@
-package com.bitoasis.cryptodemo;
+package com.bitoasis.cryptocurrencyservice;
 
-import com.bitoasis.cryptocurrencyservice.CryptodemoApplication;
 import org.junit.jupiter.api.Test;
+
 
 class CryptodemoApplicationTest {
 

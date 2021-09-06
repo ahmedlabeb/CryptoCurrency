@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: version2
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  datasource:
+    username: root
+    password: rootroot
+    url: jdbc:mysql://localhost:3306/cryptoservice
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+crypto:
+  api:
+    address: https://api.alternative.me
+    url: ${crypto.api.address}/v2/
+
+server:
+  port: 9090
+  tomcat:
+    connection-timeout: 60000

@@ -1,7 +1,7 @@
 package com.bitoasis.cryptocurrencyservice.api.control;
 
 import com.bitoasis.cryptocurrencyservice.api.entity.User;
-import com.bitoasis.cryptocurrencyservice.api.control.configuration.MyUserDetails;
+import com.bitoasis.cryptocurrencyservice.configuration.MyUserDetails;
 import com.bitoasis.cryptocurrencyservice.api.entity.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

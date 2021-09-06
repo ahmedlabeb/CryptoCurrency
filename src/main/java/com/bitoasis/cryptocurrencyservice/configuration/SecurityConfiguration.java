@@ -1,4 +1,4 @@
-package com.bitoasis.cryptocurrencyservice.api.control.configuration;
+package com.bitoasis.cryptocurrencyservice.configuration;
 
 import com.bitoasis.cryptocurrencyservice.api.control.CryptoUserDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        http.csrf().disable().cors().disable()
                 .authorizeRequests()
                 .antMatchers("**/swagger-ui/**").permitAll()
                 .antMatchers("/api/ticker/**").authenticated().and().httpBasic();

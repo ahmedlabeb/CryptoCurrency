@@ -1,4 +1,4 @@
-package com.bitoasis.cryptocurrencyservice.api.control.configuration;
+package com.bitoasis.cryptocurrencyservice.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
