@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bitoasis</groupId>
-    <artifactId>cryptodemo</artifactId>
+    <artifactId>crypto-currency-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>cryptodemo</name>
+    <name>crypto-currency-service</name>
     <description>BitOasis task</description>
 
     <properties>
@@ -25,12 +25,12 @@
             <email>ahmed.m.labeb@gmail.com</email>
         </developer>
     </developers>
-<!--    <scm>
-        <connection></connection>
-        <developerConnection></developerConnection>
-        <tag></tag>
-        <url></url>
-    </scm>-->
+    <scm>
+        <connection>git@github.com:ahmedlabeb/CryptoCurrencyService.git</connection>
+        <developerConnection>git@github.com:ahmedlabeb/CryptoCurrencyService.git</developerConnection>
+        <tag>crypto-currency-service0.0.1-SNAPSHOT</tag>
+        <url>https://github.com/ahmedlabeb/CryptoCurrencyService.git</url>
+    </scm>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -75,10 +75,6 @@
             <scope>runtime</scope>
         </dependency>
 
-<!--        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -185,15 +181,12 @@
                         <jacoco-agent.destfile>target/jacoco.exec</jacoco-agent.destfile>
                     </systemPropertyVariables>
                     <excludes>
-                        <exclude>com/bitoasis/cryptodemo/api/bo/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/configuration/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/dao/entity/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/execption/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/integration/bo/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/utils/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/event/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/security/**</exclude>
-                        <exclude>com/bitoasis/cryptodemo/mapper/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/boundary/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/control/configuration/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/control/event/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/control/execption/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/control/integration/**</exclude>
+                        <exclude>com/bitoasis/cryptocurrencyservice/control/entity/**</exclude>
                     </excludes>
                 </configuration>
             </plugin>

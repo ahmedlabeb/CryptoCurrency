@@ -1,9 +1,10 @@
 package com.bitoasis.cryptodemo.api;
 
-import com.bitoasis.cryptodemo.api.boundary.helper.dto.CryptoDataDTO;
-import com.bitoasis.cryptodemo.api.boundary.helper.dto.UserDTO;
-import com.bitoasis.cryptodemo.api.control.CryptoService;
-import com.bitoasis.cryptodemo.api.entity.User;
+import com.bitoasis.cryptocurrencyservice.api.CryptoApi;
+import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.CryptoDataDTO;
+import com.bitoasis.cryptocurrencyservice.api.boundary.helper.dto.UserDTO;
+import com.bitoasis.cryptocurrencyservice.api.control.CryptoService;
+import com.bitoasis.cryptocurrencyservice.api.entity.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
