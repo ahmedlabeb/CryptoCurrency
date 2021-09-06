@@ -9,6 +9,7 @@
  # Steps to run the service 
   - create schema with name (cryptoservice) on your local mysql 
   - change username and password of the datasource by your Mysql username and password 
+  - start redis server on your machine 
   - apply command (maven clean install)
   - Start the server from the IDE , Server will be up and running on port 9090  , you can view the swagger through this URL   
               http://localhost:9090/swagger-ui/index.html#/  
