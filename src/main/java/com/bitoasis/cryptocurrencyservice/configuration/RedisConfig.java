@@ -17,8 +17,8 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
-@ComponentScan("com.bitoasis.cryptodemo.api.control.configuration")
-@EnableRedisRepositories(basePackages = "com.bitoasis.cryptodemo.api.entity.repository")
+@ComponentScan("com.bitoasis.cryptocurrencyservice.configuration")
+@EnableRedisRepositories(basePackages = "com.bitoasis.cryptocurrencyservice.api.entity.repository")
 public class RedisConfig {
     @Value("${spring.redis.host}")
     private String redisHost;
@@ -53,26 +53,4 @@ public class RedisConfig {
         return template;
     }
 
-    @Bean
-    public MessageListenerAdapter messageListener() {
-        return new MessageListenerAdapter(new MessageListener() {
-            @Override
-            public void onMessage(final Message message, final byte[] bytes) {
-
-            }
-        });
-    }
-
-    @Bean
-    RedisMessageListenerContainer redisContainer() {
-        final RedisMessageListenerContainer container = new RedisMessageListenerContainer();
-        container.setConnectionFactory(jedisConnectionFactory());
-        container.addMessageListener(messageListener(), topic());
-        return container;
-    }
-
-    @Bean
-    ChannelTopic topic() {
-        return new ChannelTopic("pubsub:queue");
-    }
 }
